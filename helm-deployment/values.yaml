@@ -1,0 +1,16 @@
+name: sessions
+port: 30008
+deployment:
+  replicas: 3
+  env:
+    SEND_CLIENT_MESSAGE: "SEND_CLIENT_MESSAGE"
+
+authService: auth-service
+public:
+  - path: "/ping"
+    method: "GET"
+    id: "GET_PING"
+
+  - path: "/health"
+    method: "GET"
+    id: "GET_HEALTH"
