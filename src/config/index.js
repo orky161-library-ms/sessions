@@ -25,12 +25,12 @@ function createRabbitConnection (){
     });
 }
 
-const libraryAuth = new LibraryAuth(process.env.TOKEN_PRIVATE_KEY)
 const redisAd = redisAdapter({ host: process.env.CONNECTIONS_URL, port: process.env.CONNECTIONS_PORT })
+const libraryAuth = new LibraryAuth(process.env.TOKEN_PRIVATE_KEY)
 
 module.exports = {
-    libraryAuth,
     redisAd,
     redisClient,
-    createRabbitConnection
+    createRabbitConnection,
+    libraryAuth
 }

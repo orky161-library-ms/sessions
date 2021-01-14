@@ -16,9 +16,13 @@ async function getConnectionByUser(user) {
 async function removeConnection(user) {
     await removeAsync("connections", user)
 }
+function checkConnection() {
+    return redisClient.connected
+}
 
 module.exports ={
     addConnection,
     getConnectionByUser,
-    removeConnection
+    removeConnection,
+    checkConnection
 }
